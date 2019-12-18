@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+// import React from 'react';
+import React, {Component} from 'react';
+//import react object from the react package
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//import the title of sites from components
+import Titles from './components/Titles';
+
+// function App() {
+//   return (
+//     <div className="App">
+     
+//       <h1>
+//         hello
+//       </h1>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+class App extends Component {
+  render(){
+
+    // it can only one single element
+    return (
+      <div>< Titles />
+      </div>
+    )
+  };
 }
 
 export default App;
