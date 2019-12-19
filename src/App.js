@@ -7,7 +7,7 @@ import './App.css';
 import Titles from './components/Titles';
 import Form from './components/Form';
 import Weather from './components/Weather';
-
+//in prgress
 const API_KEY = "8b60410aeeb38245c7fde0afbabc11b9";
 
 // `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`
