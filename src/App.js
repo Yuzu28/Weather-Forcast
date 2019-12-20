@@ -39,12 +39,14 @@ class App extends Component {
     // console.log(api_call);
     axios.get(api_call).then((response)=>{
       console.log(response.data);
+      console.log(response.data.main.temp);
+
       this.setState({
         temperature: response.data.main.temp,
         city: response.data.name,
         country: response.data.sys.country,
         humidity: response.data.main.humidity,
-        descrption: response.data.weather[0].descrption,
+        description: response.data.weather[0].description,
         error: ""
 
       });
@@ -63,7 +65,7 @@ class App extends Component {
         city= {this.state.city} 
         country= {this.state.country} 
         humidity= {this.state.humidity} 
-        descrption= {this.state.descrption} 
+        description= {this.state.description} 
         error = {this.state.error}
 
         />
