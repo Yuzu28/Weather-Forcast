@@ -17,6 +17,19 @@ const API_KEY = "8b60410aeeb38245c7fde0afbabc11b9";
 
 
 class App extends Component {
+
+
+  state = {
+    temperature: undefined,
+    city: undefined,
+    country: undefined,
+    humidity: undefined,
+    descrption: undefined,
+    error: undefined,
+
+
+  }
+
   getWeather = (e) =>  {
     e.preventDefault();
     const city = e.target.elements.city.value;
@@ -26,6 +39,15 @@ class App extends Component {
     // console.log(api_call);
     axios.get(api_call).then((response)=>{
       console.log(response.data);
+      this.setState({
+        temperature: response.data.main.temp,
+        city: response.data.name,
+        country: response.data.sys.country,
+        humidity: response.data.main.humidity,
+        descrption: response.data.weather[0].descrption,
+        error: ""
+
+      });
     })
   }
   render(){
@@ -36,7 +58,15 @@ class App extends Component {
         < Titles />
         {/* getweather as a prop in form */}
         < Form getWeather={this.getWeather} />
-        < Weather />
+        < Weather 
+        temperature= {this.state.temperature} 
+        city= {this.state.city} 
+        country= {this.state.country} 
+        humidity= {this.state.humidity} 
+        descrption= {this.state.descrption} 
+        error = {this.state.error}
+
+        />
       </div>
     )
   };
